@@ -6,47 +6,43 @@
 /*   By: mutalay <mutalay@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/09 20:15:22 by mutalay           #+#    #+#             */
-/*   Updated: 2026/09/09 20:17:30 by mutalay          ###   ########.fr       */
+/*   Updated: 2026/09/11 17:23:53 by mutalay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+t_node	*create_node(int value)
 {
-	void	*storage;
-	size_t	i;
+	t_node	*new_node;
 
-	i = 0;
-	if (nmemb == 0 || size == 0)
-		return (malloc(0));
-	if (nmemb > (__SIZE_MAX__ / size))
+	new_node = (t_node *)malloc(sizeof(t_node));
+	if (!new_node)
 		return (NULL);
-	storage = malloc(nmemb * size);
-	if (storage == NULL)
-		return (NULL);
-	while (i < nmemb * size)
-	{
-		((char *)storage)[i] = 0;
-		i++;
-	}
-	return (storage);
+	new_node->value = value;
+	new_node->next = NULL;
+	new_node->prev = NULL;
+	return (new_node);
 }
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	add_back(t_node **head, t_node *new)
 {
-	size_t			i;
-	unsigned char	str1;
-	unsigned char	str2;
+	t_node	*tmp;
 
-	i = 0;
-	while (i < n && s1[i] && s1[i] == s2[i])
+	if (!*head)
 	{
-		i++;
+		new->prev = new;
+		new->next = new;
+		*head = new;
+		return ;
 	}
-	if (n == i)
-		return (0);
-	str1 = s1[i];
-	str2 = s2[i];
-	return (str1 - str2);
+	else
+	{
+		tmp = (*head)->prev;
+		(*head)->prev = new;
+		new->prev = tmp;
+		tmp->next = new;
+		new->next = *head;
+		return ;
+	}
 }

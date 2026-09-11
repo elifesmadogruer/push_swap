@@ -6,7 +6,7 @@
 /*   By: mutalay <mutalay@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/09 13:46:26 by mutalay           #+#    #+#             */
-/*   Updated: 2026/09/09 20:18:03 by mutalay          ###   ########.fr       */
+/*   Updated: 2026/09/11 15:26:07 by mutalay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,21 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include "libft/libft.h"
 
-typedef struct node
+typedef struct s_node
 {
-	void			*content;
-	struct node	*next;
-	struct node	*prev;
-}					node;
+	int				value;
+	struct s_node	*next;
+	struct s_node	*prev;
+}					t_node;
 
-typedef struct options
+typedef struct s_options
 {
 	int	strategy;
 	int	bench;
-}					options;
+}					t_options;
 
-char	**ft_split(char const *s, char c);
-void	*ft_calloc(size_t nmemb, size_t size);
-int	ft_strncmp(const char *s1, const char *s2, size_t n);
+t_node	*create_node(int value);
 
 #endif
