@@ -1,0 +1,7 @@
+*.o
+*.a
+*.pch
+push_swap
+checker
+a.out
+.DS_Store
