@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   sa.c                                              :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: edogruer <edogruer@student.42istanbul.com.#+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/09/09 13:30:20 by edogruer         #+#    #+#              */
-/*   Updated: 2026/09/09 17:38:40 by edogruer        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   sa.c                                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: edogruer <edogruer@student.42istanbul.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/09/09 13:30:20 by edogruer          #+#    #+#             */
+/*   Updated: 2026/09/13 14:38:17 by edogruer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	sa(t_node *stack_a)
 
 	if (!stack_a || !stack_a->next)
 		return ;
-	temp = stack_a->data;
-	stack_a->data = stack_a->next->data;
-	stack_a->next->data = temp;
+	temp = stack_a->value;
+	stack_a->value = stack_a->next->value;
+	stack_a->next->value = temp;
 }
