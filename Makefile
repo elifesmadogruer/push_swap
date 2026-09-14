@@ -4,7 +4,7 @@ CFLAGS		= -Wall -Wextra -Werror
 LIBFT_DIR	= libft
 LIBFT		= $(LIBFT_DIR)/libft.a
 
-SRCS		= main.c ft_create_node.c utils.c
+SRCS		= main.c node_utils.c parsing_utils.c
 OBJS		= $(SRCS:.c=.o)
 
 all: $(NAME)
