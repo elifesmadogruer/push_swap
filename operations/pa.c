@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   pa.c                                              :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: edogruer <edogruer@student.42istanbul.com.#+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/09/09 17:47:49 by edogruer         #+#    #+#              */
-/*   Updated: 2026/09/12 16:33:35 by edogruer        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   pa.c                                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: edogruer <edogruer@student.42istanbul.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/09/09 17:47:49 by edogruer          #+#    #+#             */
+/*   Updated: 2026/09/13 16:58:03 by edogruer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	pa(t_node **stack_a, t_node **stack_b)
 {
 	t_node	*tmp;
 
-	if (!stack_b || !*stack_b)
+	if (!stack_b || !*stack_b || !stack_a || !*stack_a)
 		return ;
 	tmp = *stack_b;
 	*stack_b = (*stack_b)->next;

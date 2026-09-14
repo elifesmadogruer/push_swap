@@ -6,7 +6,7 @@
 /*   By: edogruer <edogruer@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/13 14:37:34 by edogruer          #+#    #+#             */
-/*   Updated: 2026/09/13 14:55:49 by edogruer         ###   ########.fr       */
+/*   Updated: 2026/09/13 17:18:17 by edogruer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ void	rra(t_node **stack_a)
 
 	if (!stack_a || !*stack_a)
 		return ;
-	last = ft_lstlast(*stack_a);
+	last = *stack_a;
+	while (last->next)
+		last = last->next;
 	last->prev->next = NULL;
 	last->prev = NULL;
 	last->next = *stack_a;
