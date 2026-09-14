@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ra.c                                               :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: edogruer <edogruer@student.42istanbul.c    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/12 19:26:54 by edogruer          #+#    #+#             */
-/*   Updated: 2026/09/13 17:17:29 by edogruer         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   ra.c                                              :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: edogruer <edogruer@student.42istanbul.com.#+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/09/12 19:26:54 by edogruer         #+#    #+#              */
+/*   Updated: 2026/09/14 21:57:52 by edogruer        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,7 @@
 
 void	ra(t_node **stack_a)
 {
-	t_node	*tmp;
-	t_node	*last;
-
-	if (!stack_a || !*stack_a)
+	if (!stack_a || !*stack_a || !(*stack_a)->next)
 		return ;
-	tmp = *stack_a;
 	*stack_a = (*stack_a)->next;
-	(*stack_a)->prev = NULL;
-	last = *stack_a;
-	while (last->next)
-		last = last->next;
-	last->next = tmp;
-	tmp->prev = last;
-	tmp->next = NULL;
 }

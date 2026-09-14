@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   rrb.c                                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: edogruer <edogruer@student.42istanbul.c    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/09 17:47:38 by edogruer          #+#    #+#             */
-/*   Updated: 2026/09/13 17:18:28 by edogruer         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   rrb.c                                             :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: edogruer <edogruer@student.42istanbul.com.#+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/09/14 21:59:29 by edogruer         #+#    #+#              */
+/*   Updated: 2026/09/14 21:59:31 by edogruer        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,7 @@
 
 void	rrb(t_node **stack_b)
 {
-	t_node	*last;
-
-	if (!stack_b || !*stack_b)
+	if (!stack_b || !*stack_b || !(*stack_b)->prev)
 		return ;
-	last = *stack_b;
-	while (last->next)
-		last = last->next;
-	last->prev->next = NULL;
-	last->prev = NULL;
-	last->next = *stack_b;
-	(*stack_b)->prev = last;
-	*stack_b = last;
+	*stack_b = (*stack_b)->prev;
 }

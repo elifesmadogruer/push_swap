@@ -4,7 +4,8 @@ CFLAGS		= -Wall -Wextra -Werror
 LIBFT_DIR	= libft
 LIBFT		= $(LIBFT_DIR)/libft.a
 
-SRCS =utils.c operations/pa.c operations/pb.c operations/ra.c operations/rb.c operations/rr.c operations/rra.c operations/rrb.c operations/rrr.c operations/sa.c operations/sb.c operations/ss.c
+SRCS =main.c utils.c operations/pa.c operations/pb.c operations/ra.c operations/rb.c operations/rr.c operations/rra.c operations/rrb.c operations/rrr.c operations/sa.c operations/sb.c operations/ss.c
+OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(LIBFT):
