@@ -6,7 +6,7 @@
 /*   By: edogruer <edogruer@student.42istanbul.com.#+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/09/12 16:33:50 by edogruer         #+#    #+#              */
-/*   Updated: 2026/09/15 18:18:03 by edogruer        ###   ########.fr        */
+/*   Updated: 2026/09/16 00:48:35 by edogruer        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,8 @@ void	pb(t_node **stack_a, t_node **stack_b)
 {
 	t_node	*tmp;
 
-	if (!stack_b || !*stack_b || !stack_a || !*stack_a)
+	if (!stack_a || !stack_b || !*stack_a)
 		return ;
-	tmp = *stack_a;
-	*stack_a = (*stack_a)->next;
-	if (*stack_a)
-		(*stack_a)->prev = NULL;
-	tmp->prev = NULL;
-	tmp->next = *stack_b;
-	if (*stack_b)
-		(*stack_b)->prev = tmp;
-	*stack_a = tmp;
+	tmp = pop_node(stack_a);
+	push_node(stack_b, tmp);
 }

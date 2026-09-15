@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   pa.c                                               :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: edogruer <edogruer@student.42istanbul.c    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/09 17:47:49 by edogruer          #+#    #+#             */
-/*   Updated: 2026/09/13 16:58:03 by edogruer         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   pa.c                                              :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: edogruer <edogruer@student.42istanbul.com.#+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/09/09 17:47:49 by edogruer         #+#    #+#              */
+/*   Updated: 2026/09/16 00:48:20 by edogruer        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,8 @@ void	pa(t_node **stack_a, t_node **stack_b)
 {
 	t_node	*tmp;
 
-	if (!stack_b || !*stack_b || !stack_a || !*stack_a)
+	if (!stack_a || !stack_b || !*stack_b)
 		return ;
-	tmp = *stack_b;
-	*stack_b = (*stack_b)->next;
-	if (*stack_b)
-		(*stack_b)->prev = NULL;
-	tmp->prev = NULL;
-	tmp->next = *stack_a;
-	if (*stack_a)
-		(*stack_a)->prev = tmp;
-	*stack_a = tmp;
+	tmp = pop_node(stack_b);
+	push_node(stack_a, tmp);
 }
