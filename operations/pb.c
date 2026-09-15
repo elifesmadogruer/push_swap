@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   pb.c                                               :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: edogruer <edogruer@student.42istanbul.c    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/12 16:33:50 by edogruer          #+#    #+#             */
-/*   Updated: 2026/09/13 16:57:12 by edogruer         ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   pb.c                                              :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: edogruer <edogruer@student.42istanbul.com.#+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/09/12 16:33:50 by edogruer         #+#    #+#              */
+/*   Updated: 2026/09/15 18:18:03 by edogruer        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pa(t_node **stack_a, t_node **stack_b)
+void	pb(t_node **stack_a, t_node **stack_b)
 {
 	t_node	*tmp;
 
