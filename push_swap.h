@@ -6,7 +6,7 @@
 /*   By: mutalay <mutalay@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/09 13:46:26 by mutalay           #+#    #+#             */
-/*   Updated: 2026/09/14 15:56:54 by mutalay          ###   ########.fr       */
+/*   Updated: 2026/09/15 15:06:08 by mutalay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_options
 t_node	*create_node(int value);
 int		is_strategy(char *argv, t_options *op);
 void	add_back(t_node **head, t_node *new);
+int		control(int argc, char **argv, t_options *op, t_node **head);
 int		ft_atoi_current(const char *nptr, int *error);
 
 #endif
