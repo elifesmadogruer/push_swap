@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mutalay <mutalay@student.42istanbul.com.tr +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/09 13:46:26 by mutalay           #+#    #+#             */
-/*   Updated: 2026/09/11 17:45:32 by mutalay          ###   ########.fr       */
+/*                                                       :::      ::::::::    */
+/*   push_swap.h                                       :+:      :+:    :+:    */
+/*                                                   +:+ +:+         +:+      */
+/*   By: edogruer <edogruer@student.42istanbul.com.#+#  +:+       +#+         */
+/*                                               +#+#+#+#+#+   +#+            */
+/*   Created: 2026/09/09 13:46:26 by edogruer         #+#    #+#              */
+/*   Updated: 2026/09/17 23:21:00 by edogruer        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,27 @@ typedef struct s_node
 	int				value;
 	struct s_node	*next;
 	struct s_node	*prev;
-}					t_node;
+}	t_node;
 
 typedef struct s_options
 {
 	int	strategy;
 	int	bench;
-}					t_options;
+}	t_options;
 
 t_node	*create_node(int value);
+void	pa(t_node **stack_a, t_node **stack_b, int print);
+void	pb(t_node **stack_a, t_node **stack_b, int print);
+void	sa(t_node **stack_a, int print);
+void	sb(t_node **stack_b, int print);
+void	ss(t_node **stack_a, t_node **stack_b, int print);
+void	ra(t_node **stack_a, int print);
+void	rb(t_node **stack_b, int print);
+void	rr(t_node **stack_a, t_node **stack_b, int print);
+void	rra(t_node **stack_a, int print);
+void	rrb(t_node **stack_b, int print);
+void	rrr(t_node **stack_a, t_node **stack_b, int print);
+t_node	*pop_node(t_node **stack);
+void	push_node(t_node **stack, t_node *node);
 
 #endif
