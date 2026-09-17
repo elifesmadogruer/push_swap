@@ -6,7 +6,7 @@
 /*   By: mutalay <mutalay@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/09 19:09:27 by mutalay           #+#    #+#             */
-/*   Updated: 2026/09/15 15:06:25 by mutalay          ###   ########.fr       */
+/*   Updated: 2026/09/17 18:59:43 by mutalay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@ int	main(int argc, char **argv)
 	head = NULL;
 	op.bench = 0;
 	op.strategy = 0;
-	control(argc, argv, &op, &head);
+	if (parse_args(argc, argv, &op, &head) == 0)
+	{
+		write(2, "Error\n", 6);
+		exit (1);
+	}
+	free_list(&head);
 	return (0);
 }

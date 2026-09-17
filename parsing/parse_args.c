@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   control.c                                          :+:      :+:    :+:   */
+/*   parse_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mutalay <mutalay@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/15 15:05:11 by mutalay           #+#    #+#             */
-/*   Updated: 2026/09/15 18:56:13 by mutalay          ###   ########.fr       */
+/*   Updated: 2026/09/17 18:53:23 by mutalay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	add_number(char *str, t_node **head)
+static int	parse_number(char *str, t_node **head)
 {
 	int		value;
 	int		error;
@@ -40,31 +40,44 @@ static int	add_number(char *str, t_node **head)
 	return (1);
 }
 
-int	control(int argc, char **argv, t_options *op, t_node **head)
+static int	parse_arg(char *argv, t_node **head)
+{
+	char	**tmp;
+	int		k;
+
+	tmp = ft_split(argv, ' ');
+	k = 0;
+	if (!tmp || !tmp[k])
+	{
+		free_arg(tmp);
+		free_list(head);
+		return (0);
+	}
+	while (tmp[k])
+	{
+		if (!parse_number(tmp[k], head))
+		{
+			free_arg(tmp);
+			free_list(head);
+			return (0);
+		}
+		k++;
+	}
+	free_arg(tmp);
+	return (1);
+}
+
+int	parse_args(int argc, char **argv, t_options *op, t_node **head)
 {
 	int		i;
-	int		k;
-	char	**tmp;
 
 	i = 1;
-	k = 0;
 	while (i < argc)
 	{
 		if (!is_strategy(argv[i], op))
 		{
-			tmp = ft_split(argv[i], ' ');
-			k = 0;
-			while (tmp[k])
-			{
-				printf("%s ", tmp[k]);
-				if (!add_number(tmp[k],head))
-					return (0);
-				k++;
-			}
-			k = 0;
-			while (tmp[k])
-				free(tmp[k++]);
-			free(tmp);
+			if (!parse_arg(argv[i], head))
+				return (0);
 		}
 		i++;
 	}
