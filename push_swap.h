@@ -6,7 +6,7 @@
 /*   By: edogruer <edogruer@student.42istanbul.com.#+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/09/09 13:46:26 by edogruer         #+#    #+#              */
-/*   Updated: 2026/09/17 23:01:23 by edogruer        ###   ########.fr        */
+/*   Updated: 2026/09/17 23:21:00 by edogruer        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ void	rr(t_node **stack_a, t_node **stack_b, int print);
 void	rra(t_node **stack_a, int print);
 void	rrb(t_node **stack_b, int print);
 void	rrr(t_node **stack_a, t_node **stack_b, int print);
+t_node	*pop_node(t_node **stack);
+void	push_node(t_node **stack, t_node *node);
 
 #endif

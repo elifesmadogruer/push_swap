@@ -6,7 +6,7 @@
 /*   By: edogruer <edogruer@student.42istanbul.com.#+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/09/09 17:45:09 by edogruer         #+#    #+#              */
-/*   Updated: 2026/09/16 14:43:33 by edogruer        ###   ########.fr        */
+/*   Updated: 2026/09/17 23:25:09 by edogruer        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void	ss(t_node **stack_a, t_node **stack_b, int print)
 {
 	if (!stack_a || !stack_b)
 		return ;
-	sa(stack_a);
-	sb(stack_b);
+	sa(stack_a, 1);
+	sb(stack_b, 1);
 	if (print)
 		write(1, "ss\n", 3);
 }
