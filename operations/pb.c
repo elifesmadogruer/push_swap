@@ -6,13 +6,13 @@
 /*   By: edogruer <edogruer@student.42istanbul.com.#+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/09/12 16:33:50 by edogruer         #+#    #+#              */
-/*   Updated: 2026/09/16 14:35:06 by edogruer        ###   ########.fr        */
+/*   Updated: 2026/09/17 23:03:00 by edogruer        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pb(t_node **stack_a, int print, t_node **stack_b)
+void	pb(t_node **stack_a, t_node **stack_b, int print)
 {
 	t_node	*tmp;
 
