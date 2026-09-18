@@ -8,7 +8,7 @@ SRCS = 		main.c \
 				utils/node_utils.c \
 				operations/sa.c operations/sb.c operations/ss.c \
 				operations/pa.c operations/pb.c operations/ra.c \
-				operations/rb.c operations/rr.coperations/rra.c  \
+				operations/rb.c operations/rr.c operations/rra.c  \
 				operations/rrb.c operations/rrr.c
 OBJS		= $(SRCS:.c=.o)
 
