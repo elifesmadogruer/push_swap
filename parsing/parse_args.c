@@ -6,11 +6,29 @@
 /*   By: mutalay <mutalay@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/15 15:05:11 by mutalay           #+#    #+#             */
-/*   Updated: 2026/09/17 18:53:23 by mutalay          ###   ########.fr       */
+/*   Updated: 2026/09/18 17:32:47 by mutalay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static int	has_duplicate(t_node **head, int value)
+{
+	t_node	*tmp;
+
+	if (!*head)
+		return (0);
+	if ((*head)->value == value)
+		return (1);
+	tmp = (*head)->next;
+	while (tmp != *head)
+	{
+		if (tmp->value == value)
+			return (1);
+		tmp = tmp->next;
+	}
+	return (0);
+}
 
 static int	parse_number(char *str, t_node **head)
 {
@@ -22,21 +40,12 @@ static int	parse_number(char *str, t_node **head)
 	value = ft_atoi_current(str, &error);
 	if (error)
 		return (0);
-	if (!*head)
-	{
-		add_back(head, create_node(value));
-		return (1);
-	}
-	if ((*head)->value == value)
+	if (has_duplicate(head, value))
 		return (0);
-	tmp = (*head)->next;
-	while (tmp != *head)
-	{
-		if (tmp->value == value)
-			return (0);
-		tmp = tmp->next;
-	}
-	add_back(head, create_node(value));
+	tmp = create_node(value);
+	if (!tmp)
+		return (0);
+	add_back(head, tmp);
 	return (1);
 }
 
