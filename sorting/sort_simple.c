@@ -6,7 +6,7 @@
 /*   By: edogruer <edogruer@student.42istanbul.com.#+#  +:+       +#+         */
 /*                                               +#+#+#+#+#+   +#+            */
 /*   Created: 2026/09/15 18:19:54 by edogruer         #+#    #+#              */
-/*   Updated: 2026/09/17 13:10:48 by edogruer        ###   ########.fr        */
+/*   Updated: 2026/09/18 18:06:32 by edogruer        ###   ########.fr        */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,23 @@ void	rotate_to_top(t_node **a, int index, int size)
 			i++;
 		}
 	}
+}
+
+void	sort_simple(t_node **a, t_node **b)
+{
+	int	size;
+	int	min;
+
+	if (is_sorted(*a))
+		return ;
+	size = stack_size(*a);
+	while (*a)
+	{
+		min = find_min_index(*a);
+		rotate_to_top(a, min, size);
+		pb(a, b, 1);
+		size = size - 1;
+	}
+	while (*b)
+		pa(a, b, 1);
 }
