@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   disorder.c                                        :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: edogruer <edogruer@student.42istanbul.com.#+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/09/20 20:19:21 by edogruer         #+#    #+#              */
-/*   Updated: 2026/09/23 01:14:45 by edogruer        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   disorder.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mutalay <mutalay@student.42istanbul.com.tr +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/09/20 20:19:21 by edogruer          #+#    #+#             */
+/*   Updated: 2026/10/06 15:34:35 by mutalay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ double	compute_disorder(t_node *stack_a)
 	mistakes = 0;
 	total_pairs = 0;
 	i = stack_a;
-	while (i)
+	while (i->next != stack_a)
 	{
 		j = i->next;
-		while (j)
+		while (j != stack_a)
 		{
 			total_pairs++;
 			if (i->value > j->value)
