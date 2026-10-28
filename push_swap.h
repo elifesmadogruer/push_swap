@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mutalay <mutalay@student.42istanbul.com.tr +#+  +:+       +#+        */
+/*   By: edogruer <edogruer@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/18 16:50:35 by mutalay           #+#    #+#             */
-/*   Updated: 2026/10/08 15:21:27 by mutalay          ###   ########.fr       */
+/*   Created: 2026/09/18 16:50:35 by edogruer          #+#    #+#             */
+/*   Updated: 2026/10/28 15:00:42 by edogruer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,15 @@ void	push_node(t_node **stack, t_node *node);
 int		is_sorted(t_node *a);
 int		stack_size(t_node *a);
 void	sort_simple(t_node **a, t_node **b, t_operations *op_count);
-void	sort_adaptive(t_node **a, t_node **b, double disorder,
-			t_operations *op_count);
+void sort_adaptive(t_node * *a, t_node * *b, double disorder,
+	t_operations	*op_count);
 void	sort_medium(t_node **a, t_node **b, t_operations *opr_count);
+size_t	get_chunk_size(size_t size);
 void	sort_complex(t_node **a, t_node **b, t_operations *opr_count);
 double	compute_disorder(t_node *stack_a);
 void	put_index(t_node *a);
-void	run_strategy(t_node **a, t_node **b, t_options *op,
-			t_operations *opr_counter);
+void run_strategy(t_node * *a, t_node * *b, t_options * op,
+	t_operations	*opr_counter);
 void	print_bench(t_options *op, t_operations *count);
 
 #endif
