@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_medium.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edogruer <edogruer@student.42istanbul.c    +#+  +:+       +#+        */
+/*   By: mutalay <mutalay@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/08 16:00:54 by edogruer          #+#    #+#             */
-/*   Updated: 2026/10/28 15:50:13 by edogruer         ###   ########.fr       */
+/*   Updated: 2026/11/04 18:38:01 by mutalay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static int	find_max_position(t_node *b)
 	return (pos);
 }
 
-static void rotate_b(t_node * *b, int pos, int size,
+static void	rotate_b(t_node **b, int pos, int size,
 	t_operations	*op)
 {
 	int	count;
@@ -58,7 +58,7 @@ static void rotate_b(t_node * *b, int pos, int size,
 	}
 }
 
-static void push_chunks(t_node * *a, t_node * *b, size_t chunk,
+static void	push_chunks(t_node **a, t_node **b, size_t chunk,
 	t_operations	*op)
 {
 	size_t	pushed;
