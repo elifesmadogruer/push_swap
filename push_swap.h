@@ -6,7 +6,7 @@
 /*   By: mutalay <mutalay@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/18 16:50:35 by edogruer          #+#    #+#             */
-/*   Updated: 2026/11/04 20:07:36 by mutalay          ###   ########.fr       */
+/*   Updated: 2026/11/11 14:26:53 by mutalay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ void	put_index(t_node *a);
 void	run_strategy(t_node **a, t_node **b, t_options *op,
 			t_operations	*opr_counter);
 void	print_bench(t_options *op, t_operations *count);
-void	radix_sort(t_node **a, t_node **b, int max_bits, t_operations *opr);
 int		get_max_bits(int size);
 
 #endif
