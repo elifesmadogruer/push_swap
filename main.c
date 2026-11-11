@@ -6,7 +6,7 @@
 /*   By: mutalay <mutalay@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/18 16:48:06 by mutalay           #+#    #+#             */
-/*   Updated: 2026/10/08 15:21:31 by mutalay          ###   ########.fr       */
+/*   Updated: 2026/11/11 17:53:28 by mutalay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int	main(int argc, char **argv)
 		write(2, "Error\n", 6);
 		exit (1);
 	}
+	if (!head_a)
+		return (0);
 	op.disorder = compute_disorder(head_a);
 	put_index(head_a);
 	if (!is_sorted(head_a))
